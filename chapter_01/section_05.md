@@ -28,5 +28,5 @@ a = 2 + 3;
 | long | 8字节  | -2^63 ~ 2^63-1 | long a = 10L; |
 | char | 2字节  |   | char a = 'a'; |
 | float | 4字节  |   | float a = 1.0F; |
-| double | 8字节  |   | |
+| double | 8字节  |   | double a = 1.0D; |
 | boolean  | -  |   | |
