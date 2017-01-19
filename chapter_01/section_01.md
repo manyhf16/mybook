@@ -41,6 +41,9 @@ JavaSE的组成为：
 | 8.0 | 2014/03 |  | lambda、stream API 永久代去除 | 也叫1.8 |
 | 9.0 | 2017/03? |  |  |  |
 
+查看当前JDK版本的命令：
+    java -version
+
 ## 3.Java EE
 
 在Java SE的基础上，增加了企业级的功能，如Servlet,JSP,EJB等，但这些功能需要应用程序服务器（容器）的支持，如Tomcat,Jetty,JBoss等。
