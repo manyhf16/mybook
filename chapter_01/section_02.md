@@ -48,9 +48,18 @@ export JAVA_HOME=安装目录
 shell > source /etc/profile
 ```
 
-## 2. Path 环境变量
+## 2. PATH 环境变量
+PATH 环境变量决定了在哪些路径下搜索`可执行程序`和`脚本`
 
-## 3. ClassPath
+Path可以由多个路径组成，多个路径之间：
+
+Windows下用;分隔
+
+Linux下用:分隔
+
+
+## 3. CLASSPATH
+CLASSPATH 环境变量决定了在哪些路径下可以搜索到`java 类`
 
 
 
