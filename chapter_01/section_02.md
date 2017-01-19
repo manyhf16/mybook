@@ -1,5 +1,7 @@
 # 环境变量
 
+***
+
 ## 1. JAVA\_HOME 环境变量
 
 Java程序运行之前需要知道JDK或JRE的安装路径，这个路径就是JAVA\_HOME.
