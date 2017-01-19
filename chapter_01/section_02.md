@@ -20,7 +20,7 @@ Linux：
 shell > echo $JAVA_HOME
 ```
 
-### 1.2 临时修改JAVA\_HOME环境变量
+### 1.2 临时修改JAVA_HOME环境变量
 
 Windows：
 
@@ -34,7 +34,9 @@ Linux：
 shell > export JAVA_HOME=安装目录
 ```
 
-> 注意：
+> 注意：用以上方法修改，当cmd或shell窗口关闭时则失效
+
+### 1.3 永久修改
 
 ## 2. Path 环境变量
 
