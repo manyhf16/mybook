@@ -4,7 +4,7 @@
 * [第一章 初识Java](chapter_01/README.md)
 	- [Java的版本](chapter_01/section_01.md)
 	- [环境变量](chapter_01/section_02.md)
-	- [Java开发和运行流程](chapter_01/section_03.md)
+	- [Java程序开发和运行流程](chapter_01/section_03.md)
 	- [基本数据类型](chapter_01/section_04.md)
 	- [变量](chapter_01/section_05.md)
 	- [注释](chapter_01/section_06.md)
