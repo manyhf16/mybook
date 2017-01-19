@@ -33,5 +33,5 @@ JavaSE的组成为：
 |5.0|2004/09|Tiger|泛型、自动拆装箱、枚举、可变参数、for each增强|也叫1.5|
 |6.0|2006/12|Mustang|   |也叫1.6|
 |7.0|2011/07|Dolphin|对象排序算法由merge sort 改为timsort|也叫1.7|
-|8.0|2014/03|   |lambda、stream API 永久代去除|   |
+|8.0|2014/03|   |lambda、stream API 永久代去除|也叫1.8|
 |9.0|2017/03?   |   |   |   |
