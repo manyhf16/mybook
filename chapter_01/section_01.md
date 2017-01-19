@@ -62,6 +62,7 @@ Tomcat支持的规范版本如下：
 | 6.0 | JavaEE 5 | Servlet 2.5、JSP 2.1、Comet IO | JSP 2.1 已允许在表达式中调用方法 |
 | 7.0 | JavaEE 6 | Servlet 3.0、JSP 2.2 |  |
 | 8.0 | JavaEE 7 | Servlet 3.1、JSP 2.3、Unified EL、WebSocket、URIEncoding默认为UTF-8 |  |
+| 8.5 | JavaEE 7 | 去除Comet、去除BIO |  |
 
 ***
 
