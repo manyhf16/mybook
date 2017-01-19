@@ -29,4 +29,4 @@ a = 2 + 3;
 | char | 2字节  |   | char a = 'a'; |
 | float | 4字节  |   | float a = 1.0F; |
 | double | 8字节  |   | double a = 1.0D; |
-| boolean  | -  |   | |
+| boolean  | -  |   | boolean a = true; |
