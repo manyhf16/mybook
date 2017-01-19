@@ -35,4 +35,19 @@ public class HelloWorld {
 
 }
 ```
+
+## 4. 文档注释
+```
+/** 
+ *  这是文档注释，第一行
+ *  第二行
+ *  第三行
+ */
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("你好，世界！"); 
+    }
+
+}
+```
 ***
