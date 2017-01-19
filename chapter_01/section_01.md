@@ -35,3 +35,15 @@ JavaSE的组成为：
 |7.0|2011/07|Dolphin|对象排序算法由merge sort 改为timsort|也叫1.7|
 |8.0|2014/03|   |lambda、stream API 永久代去除|也叫1.8|
 |9.0|2017/03?   |   |   |   |
+
+## 3.Java EE
+在Java SE的基础上，增加了企业级的功能，如Servlet,JSP,EJB等，但这些功能需要应用程序服务器（容器）的支持，如Tomcat,Jetty,JBoss等。
+
+其中Tomcat和Jetty容器只支持Servlet和JSP规范，因此也称为WEB容器。
+
+而JBoss和TomEE可以支持Servlet,JSP,EJB规范，因此也称为EJB容器
+
+EJB由于其门槛较高（主要是成本而非技术）在国内不是很流行。
+
+Tomcat支持的规范版本如下：
+
