@@ -23,9 +23,9 @@ public class HelloWorld {
 
 ## 3. 多行注释
 ```
-/* 
- *  这是多行注释1
- */
+/\* 
+ \*  这是多行注释1
+ \*/
 public class HelloWorld {
     public static void main(String[] args) {
         System.out.println("你好，世界！"); 
