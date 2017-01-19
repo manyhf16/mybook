@@ -27,6 +27,6 @@ a = 2 + 3;
 | int | 4字节  | -2^31 ~ 2^31-1 | int a = 10; |
 | long | 8字节  | -2^63 ~ 2^63-1 | long a = 10L; |
 | char | 2字节  |   | float a = 1.0F; |
-| float | 4字节  | float a = 1.0F; |
+| float | 4字节  |   | float a = 1.0F; |
 | double | 8字节  |   | |
 | boolean  | -  |   | |
