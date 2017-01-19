@@ -41,8 +41,9 @@ JavaSE的组成为：
 | 8.0 | 2014/03 |  | lambda、stream API 永久代去除 | 也叫1.8 |
 | 9.0 | 2017/03? |  |  |  |
 
-查看当前JDK版本的命令：
-    java -version
+查看当前JDK版本的命令：  
+
+`java -version`
 
 ## 3.Java EE
 
@@ -56,9 +57,9 @@ Tomcat支持的规范版本如下：
 
 | 版本 | 支持JavaEE版本 | 重大功能 | 备注 |
 | --- | --- | --- | --- |
-| 6.0 | JavaEE 5  | Servlet 2.5、JSP 2.1、Comet IO | JSP 2.1 已允许在表达式中调用方法  |
-| 7.0 | JavaEE 6  | Servlet 3.0、JSP 2.2 | |
-| 8.0 | JavaEE 7  | Servlet 3.1、JSP 2.3、Unified EL、WebSocket、URIEncoding默认为UTF-8 | |
+| 6.0 | JavaEE 5 | Servlet 2.5、JSP 2.1、Comet IO | JSP 2.1 已允许在表达式中调用方法 |
+| 7.0 | JavaEE 6 | Servlet 3.0、JSP 2.2 |  |
+| 8.0 | JavaEE 7 | Servlet 3.1、JSP 2.3、Unified EL、WebSocket、URIEncoding默认为UTF-8 |  |
 
 
 
