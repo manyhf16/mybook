@@ -6,12 +6,12 @@
 
 > 注意：注释可以加在代码的任意位置
 
-## 1. 单行注释
+## 2. 单行注释
 例如：
 
 ```
 public class HelloWorld {
-    // 这是注释，不影响程序运行，只起到提示程序员的作用
+    // 这是单行注释
     public static void main(String[] args) {
         System.out.println("你好，世界！"); 
     }
