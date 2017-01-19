@@ -43,9 +43,9 @@ JavaSE的组成为：
 
 查看当前JDK版本的命令：  
 
-~~~
+```
 cmd > java -version
-~~~
+```
 
 ## 3.Java EE
 
