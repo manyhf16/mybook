@@ -57,7 +57,7 @@ cmd > java -version
 
 Tomcat支持的规范版本如下：
 
-| 版本 | 支持JavaEE版本 | 重大功能 | 备注 |
+| 版本 | 支持的JavaEE | 重大功能 | 备注 |
 | --- | --- | --- | --- |
 | 6.0 | JavaEE 5 | Servlet 2.5、JSP 2.1、Comet IO | JSP 2.1 已允许在表达式中调用方法 |
 | 7.0 | JavaEE 6 | Servlet 3.0、JSP 2.2 |  |
