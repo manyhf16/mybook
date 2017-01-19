@@ -29,3 +29,6 @@ cmd > javac -d . HelloWorld.java
 ```
 cmd > java HelloWorld
 ```
+java命令的作用是启动了一个`jvm虚拟机`，并将 HelloWorld.class 字节码文件加载至`jvm虚拟机`，并找到 `main 入口方法`，执行其中的代码。
+***
+
