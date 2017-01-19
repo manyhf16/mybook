@@ -12,7 +12,7 @@
 
 简单的说：
 
-JavaSE==JDK
+JavaSE=JDK
 
 JDK=JRE+开发工具
 
