@@ -50,4 +50,5 @@ public class HelloWorld {
 
 }
 ```
+文档注释的格式是 `/** 注释内容 */`，而多行注释的格式是`/* 注释内容 */`，除此以外，文档注释主要加在public 的类(class)、方法(method)、和域(field)上，可以配合javadoc 命令生成html格式的java api文档
 ***
