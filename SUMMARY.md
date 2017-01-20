@@ -67,3 +67,4 @@
 * [附录](chapter_last/README.md)
 	- [延伸阅读-整数二进制存储](chapter_last/section_01.md)
 	- [延伸阅读-浮点数二进制存储](chapter_last/section_02.md)
+	- [延伸阅读-字符二进制存储](chapter_last/section_03.md)
