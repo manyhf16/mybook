@@ -45,6 +45,63 @@
 |4ee0| 仠 | 仡 | 仢 | 代 | 令 | 以 | 仦 | 仧 | 仨 | 仩 | 仪 | 仫 | 们 | 仭 | 仮 | 仯 |
 |4ef0| 仰 | 仱 | 仲 | 仳 | 仴 | 仵 | 件 | 价 | 仸 | 仹 | 仺 | 任 | 仼 | 份 | 仾 | 仿 |
 
+> 附: 打印Unicode码表的小程序：
+
+```
+/**
+ * 格式专门为Markdown Table设计！
+ * 调用示例：
+ * printTable("%2s", 0, 128);           -- 打印所有ASCii字符
+ * printTable("%4s", 0x4e00, 0x4f00);   -- 打印前256个汉字
+ * @param format 数字格式：例如%4s 表示，将数字视为4位，不足前置0补齐
+ * @param begin Unicode 码表中的起始数字(包含)
+ * @param end   Unicode 码表中的结束数字(不包含)
+ */
+public static void printTable(String format, int begin, int end) {
+    StringBuilder sb = new StringBuilder(1024);
+    // 拼接表头，低位数字
+    StringJoiner sj = new StringJoiner("|", "|", "|");
+    for (int i = -1; i < 16; i++) {
+        if (i == -1) {
+            sj.add(" \\ ");
+        } else {
+            sj.add(String.format("%2s", Integer.toHexString(i)).replaceAll("\\s", "0"));
+        }
+    }
+    System.out.println(sj);
+
+    // 表头分隔线
+    sj = new StringJoiner("|", "|", "|");
+    for (int i = -1; i < 16; i++) {
+        sj.add("---");
+    }
+    System.out.println(sj);
+
+    // 遍历
+    for (int i = begin; i < end; i++) {
+        String x;
+        if (i < 32 || 127 <= i && i < 161) {
+            x = String.format(format, Integer.toHexString(i)).replaceAll("\\s", "0");
+        } else if (i == 0x7c) {
+            x = " \\| ";
+        } else {
+            x = " " + Character.toString((char) i) + " ";
+        }
+        if (i % 16 == 0) {
+            // 处理第一列
+            sj = new StringJoiner("|", "|", "|");
+            sj.add(String.format("%4s", Integer.toHexString(i)).replaceAll("\\s", "0"));
+        } else if ((i + 1) % 16 == 0) {
+            // 处理最后一列
+            sj.add(x);
+            sb.append(sj.toString()).append("\n");
+        }
+        sj.add(x);
+    }
+    System.out.println(sb);
+}
+```
+
 ---
 
 
