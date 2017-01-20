@@ -49,7 +49,7 @@ a = 2 + 3;
 > - [浮点数二进制存储](/chapter_last/section_02.md)
 > - [字符二进制存储](/chapter_last/section_03.md)
 
-
+> 注意4：所有整数，浮点数类型，需要注意其存储范围，避免运算结果溢出。尤其float和double还要注意小数精度，float和double计算时会产生精度问题，两个float或double避免用==进行比较
 
 ***
 
