@@ -45,9 +45,9 @@ a = 2 + 3;
 
 > 注意3：关于各种数据类型的更深入的讲解，请参考：
 
-- [整数二进制存储](/chapter_last/section_01.md)
-- [浮点数二进制存储](/chapter_last/section_02.md)
-- [字符二进制存储](/chapter_last/section_03.md)
+> - [整数二进制存储](/chapter_last/section_01.md)
+> - [浮点数二进制存储](/chapter_last/section_02.md)
+> - [字符二进制存储](/chapter_last/section_03.md)
 
 
 
