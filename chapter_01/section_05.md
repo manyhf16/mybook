@@ -43,6 +43,14 @@ a = 2 + 3;
 
 > 注意2：某一类型的变量不一定只能保存该单一类型的字面量，还可能有类型提升的问题，参考 [类型提升](/chapter_01/section_07.md)
 
+> 注意3：关于各种数据类型的更深入的讲解，请参考：
+
+- [整数二进制存储](/chapter_last/section_01.md)
+- [浮点数二进制存储](/chapter_last/section_02.md)
+- [字符二进制存储](/chapter_last/section_03.md)
+
+
+
 ***
 
 
