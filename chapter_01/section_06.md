@@ -74,7 +74,11 @@ int b = a++ + ++a + a++;
 
 | a | b | a && b | a \|\| b | a ^ b |
 | :--- | :--- | :--- | :--- | :--- |
-|  |  |  |||
+| true | true | true | true | false |
+| true | true | true | true | false |
+| true | true | true | true | false |
+| true | true | true | true | false |
+
 
 ---
 
