@@ -79,6 +79,10 @@ int b = a++ + ++a + a++;
 | false | true | false | true | true|
 | false | false | false | false | false |
 
+| a | !a |
+| :--- | :--- |
+| true | false |
+| false | true |
 
 ---
 
