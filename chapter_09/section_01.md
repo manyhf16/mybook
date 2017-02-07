@@ -86,5 +86,25 @@ t.interrupt() // 打断正在wait(), sleep(), 或join() 的t线程
 
 线程池的好处是：实现了线程对象的复用
 
+Java中使用线程池的例子：
+
+```
+ExecutorService service = new ThreadPoolExecutor(coreSize,maxSize,keepAliveTime,TimeUnit,BlockingQueue);
+
+serivce.execute(new Runnable(){ 
+  public void run(){
+  }
+});
+```
+
+其中，coreSize是线程池的基本线程数，也可以理解为最小线程数；
+
+maxSize是线程池的最大线程数，当任务比较密集，超过了基本线程数，那么线程池会新建一些线程来救急，新建的线程数+基本线程数不会超过maxSize；
+
+这些新建的线程在任务高峰期过去后，一般没必要保留，让他们结束就好，因此会有keepAliveTime来决定它们在任务结束后会保留多长时间，TimeUnit是时间单位；
+
+最后，如果高峰期任务量特别大，超过了maxSize，那么超过的任务会被放入阻塞队列BlockingQueue缓冲起来，排队等待执行。
+
+
 
 
