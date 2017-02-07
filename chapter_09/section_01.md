@@ -34,6 +34,7 @@ Java中将线程进行了抽象为`java.lang.Thread`类，而对线程中要运�
 
 ### 创建线程
 方法1：
+
 ```
 Thread t = new Thread(new Runnable(){
    public void run() {
