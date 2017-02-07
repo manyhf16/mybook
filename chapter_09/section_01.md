@@ -54,7 +54,7 @@ Thread t = new Thread(){
 方法3：如果使用JDK8，可以用lambda表达式简化Runnable的写法：
 
 ```
-Thread t = new Thread(()-{ // 要并行执行的代码 });
+Thread t = new Thread(()-> { // 要并行执行的代码 });
 ```
 
 
