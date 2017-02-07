@@ -75,7 +75,7 @@ Thread.sleep(long n)  // 让当前线程休眠n毫秒
 t.getName() // 获取线程名
 t.join() // 让当前线程等待t线程运行结束
 t.join(long n) // 让当前线程等待t线程运行结束，最多等待n毫秒
-t.interrupt() // 打断正在wait(), sleep(), 或join() 的线程
+t.interrupt() // 打断正在wait(), sleep(), 或join() 的t线程
 ```
 
 ### 线程池
