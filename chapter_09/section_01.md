@@ -33,6 +33,7 @@
 Java中将线程进行了抽象为`java.lang.Thread`类，而对线程中要运行的任务则抽象为`java.lang.Runnable`接口
 
 ### 创建线程
+方法1：
 ```
 Thread t = new Thread(new Runnable(){
    public void run() {
@@ -40,6 +41,22 @@ Thread t = new Thread(new Runnable(){
    }
 });
 ```
+方法2：因为Thread类自己也实现了Runnable接口，因此生成一个Thread的子类，重写run方法也是可以的：
+
+```
+Thread t = new Thread(){
+   public void run() {
+      // 要并行执行的代码
+   }
+};
+
+```
+方法3：如果使用JDK8，可以用lambda表达式简化Runnable的写法：
+
+```
+Thread t = new Thread(()-{ // 要并行执行的代码 });
+```
+
 
 
 
