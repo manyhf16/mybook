@@ -63,7 +63,7 @@
 * [第七章 异常](chapter_07/README.md)
 * [第八章 IO](chapter_08/README.md)
 * [第九章 线程](chapter_09/README.md)
-	- [创建线程](chapter_09/section_01.md)
+	- [并行](chapter_09/section_01.md)
 	- [并发](chapter_09/section_02.md)
 	- [线程通信](chapter_09/section_03.md)
 	- [线程工具类](chapter_09/section_04.md)
