@@ -104,6 +104,6 @@ public class TestConcurrent {
 
 这时候如果t2 也运行到了 synchronized(mutex) 时，它发现门被锁住了，因此只能在门外等待。
 
-当t1执行完synchronized{} 块内的代码，这时候才会解开门上的锁，从mutex房间出来。t2线程这时才可以进入房间，反锁住门，执行它的count--代码。
+当t1执行完synchronized{} 块内的代码，这时候才会解开门上的锁，从mutex房间出来。t2线程这时才可以进入mutex房间，反锁住门，执行它的count--代码。
 
 
