@@ -106,4 +106,6 @@ public class TestConcurrent {
 
 当t1执行完synchronized{} 块内的代码，这时候才会解开门上的锁，从mutex房间出来。t2线程这时才可以进入mutex房间，反锁住门，执行它的count--代码。
 
+> 注意：上例中t1和t2线程必须用 synchronized 锁住同一个mutex 对象，如果t1锁住的是m1对象，t2锁住的是m2对象，就好比两个人分别进入了两个不同的房间，没法起到同步的效果。
+
 
