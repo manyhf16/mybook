@@ -60,7 +60,7 @@ t2 - putstatic  将t2的结果-1写回count
   * 引用类型的对象如果是不可变的，线程安全（如String）
 
 ## 2. 问题的解决
-java中可以用` synchronized `关键字来保证多行代码的原子性，即受synchronized 保护的多行代码同一时刻只能被一个线程执行，其它线程只能排队等待。换句话说，synchronized 将并行操作变成了串行操作。
+java中可以用` synchronized `关键字来保证多行代码的原子性，即受synchronized 保护的多行代码同一时刻只能被一个线程执行，其它线程只能排队等待。换句话说，synchronized 将并行操作变成了串行操作（也称为同步操作）。
 
 ### 1) 语法
 ```
