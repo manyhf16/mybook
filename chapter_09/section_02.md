@@ -60,4 +60,46 @@ t2 - putstatic  将t2的结果-1写回count
   * 引用类型的对象如果是不可变的，线程安全（如String）
 
 ## 2. 问题的解决
+java中可以用` synchronized `关键字来保证多行代码的原子性，即受synchronized 保护的多行代码同一时刻只能被一个线程执行，其它线程只能排队等待。换句话说，synchronized 将并行操作变成了串行操作。
+
+### 1) 语法
+```
+synchronized(obj) {
+   // 多行要原子操作的代码
+}
+```
+其中obj可以是任何对象，但要注意这个对象应该是能够为多个线程所共享和访问到的。
+
+例如，如果要让之前的例子成功运行，可以将代码修改为：
+```
+public class TestConcurrent {
+  public static int count = 0;
+  public static final Object mutex = new Object();
+  public static void main(String[] args) throws InterruptedException {
+    Thread t1 = new Thread(() -> {
+      for (int i = 0; i < 1000; i++) {
+        synchronized (mutex) {
+          count++;
+        }
+      }
+    });
+    Thread t2 = new Thread(() -> {
+      for (int i = 0; i < 1000; i++) {
+        synchronized (mutex) {
+          count--;
+        }
+      }
+    });
+    t1.start();
+    t2.start();
+    t1.join(); // 等待t1运行结束(这时t2在同时运行)
+    t2.join(); // 等待t2运行结束
+    System.out.println(count);
+  }
+}
+```
+如何理解呢：你可以把mutex想象成一个房间，线程t1,t2想象成两个人。
+
+当线程t1执行到 synchronized(mutex) 时就好比t1进入了这个房间，并反手锁住了门，在门内执行count++代码， 这时候如果t2 也运行到了 synchronized(mutex) 时，它发现门被锁住了，因此只能在门外等待，只有当t1执行完synchronized{} 块内的代码，这时候才会解开门上的锁，从mutex房间出来。t2线程这时才可以进入房间，反锁住门，执行它的count--代码。
+
 
