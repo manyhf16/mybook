@@ -9,7 +9,7 @@
 刚才的场景用代码可以写成：
 
 ```
-public class TestThread2 {
+public class TestSignal {
   public static void main(String[] args) {
     Thread t1 = new Thread(() -> {
       System.out.println(1);
@@ -36,7 +36,7 @@ public class TestThread2 {
 ## 第一次改进
 
 ```
-public class TestThread2 {
+public class TestSignal {
   static Object mutex = new Object();
   public static void main(String[] args) {
     Thread t1 = new Thread(() -> {
@@ -58,5 +58,41 @@ public class TestThread2 {
     t2.start();
   }
 }
-`
+```
+
 这样，如果t1 先运行，运行到mutex时，就进入mutex等待； 接下来t2 运行，打印了2 以后，进入mutex唤醒了在mutex上等待了 t1 线程，t1 线程恢复运行，打印1。
+
+但如果t2 先运行，打印了2 以后，进入mutex唤醒mutex上等待的线程，而这时mutex上根本没有等待的线程，所以接下来t1运行到mutex时，进入mutex等待，将来就没人来唤醒它了。
+
+## 第二次改进
+
+需要加一个标记位来标记t1 是否需要wait()，前面已经分析过，如果t2已启动，这时的顺序已经达到了之前的要求，t1不需要wait()，否则t1才需要wait()：
+
+```
+public class TestSignal {
+  static Object mutex = new Object();
+  static boolean t2Started = false;
+  public static void main(String[] args) {
+    Thread t1 = new Thread(() -> {      
+      synchronized (mutex) {
+        if(! t2Started) {
+          try {
+            mutex.wait();
+          } catch (Exception e) {
+          }
+        }
+      }
+      System.out.println(1);
+    });
+    Thread t2 = new Thread(() -> {
+      System.out.println(2);
+      synchronized (mutex) {
+        t2Started = true;
+        mutex.notify();
+      }
+    });
+    t1.start();
+    t2.start();
+  }
+}
+```
