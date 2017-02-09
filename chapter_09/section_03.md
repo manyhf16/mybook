@@ -30,3 +30,28 @@ public class TestThread2 {
 * 对象.notifyAll()方法是唤醒对象上所有等待的线程
 
 > 注意：wait() 和 notify() 方法运行前都必须先给这个对象加锁。
+
+```
+public class TestThread2 {
+  static Object mutex = new Object();
+  public static void main(String[] args) {
+    Thread t1 = new Thread(() -> {
+      synchronized (mutex) {
+        try {
+          mutex.wait();
+        } catch (Exception e) {
+        }
+      }
+      System.out.println(1);
+    });
+    Thread t2 = new Thread(() -> {
+      System.out.println(2);
+      synchronized (mutex) {
+        mutex.notify();
+      }
+    });
+    t1.start();
+    t2.start();
+  }
+}
+```
