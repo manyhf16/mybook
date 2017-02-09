@@ -8,26 +8,19 @@
 
 ```
 public class TestThread2 {
-  static Object mutex = new Object();
   public static void main(String[] args) {
     Thread t1 = new Thread(() -> {
-      synchronized (mutex) {
-        try {
-          mutex.wait();
-        } catch (Exception e) {
-        }
-      }
       System.out.println(1);
     });
     Thread t2 = new Thread(() -> {
       System.out.println(2);
-      synchronized (mutex) {
-        mutex.notify();
-      }
     });
     t1.start();
     t2.start();
   }
-
 }
 ```
+多运行几次可观察到，有时打印 1 2， 有时打印 2 1，顺序是不一定的。
+
+比如任务要求必须t2打印完毕2之后，再运行t1打印1，如何实现呢？
+
