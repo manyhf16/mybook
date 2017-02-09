@@ -25,7 +25,6 @@ JavaSE的组成为：
 
 * JVM=class的运行环境
 
-
 截至今日，JDK的版本有
 
 | 版本 | 发布时间 | 代号 | 重大功能 | 备注 |
@@ -41,7 +40,7 @@ JavaSE的组成为：
 | 8.0 | 2014/03 |  | lambda、stream API 永久代去除 | 也叫1.8 |
 | 9.0 | 2017/03? |  |  | 也叫1.9 |
 
-查看当前JDK版本的命令：  
+查看当前JDK版本的命令：
 
 ```
 cmd > java -version
@@ -64,7 +63,7 @@ Tomcat支持的规范版本如下：
 | 8.0 | JavaEE 7 | Servlet 3.1、JSP 2.3、Unified EL、WebSocket、URIEncoding默认为UTF-8 |  |
 | 8.5 | JavaEE 7 | 去除Comet、去除BIO | - |
 
-***
+---
 
 
 
