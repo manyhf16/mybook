@@ -54,4 +54,5 @@ public class TestThread2 {
     t2.start();
   }
 }
-```
+`
+这样，如果t1 先运行，运行到mutex时，就进入mutex等待； 接下来t2 运行，打印了2 以后，进入mutex唤醒了在mutex上等待了 t1 线程，t1 线程恢复运行，打印1。
