@@ -8,7 +8,7 @@
 
 刚才的场景用代码可以写成：
 
-{%ace edit=true, lang='java'%}
+{%ace edit=false, lang='java'%, theme='monokai'}
 public class TestSignal {
   public static void main(String[] args) {
     Thread t1 = new Thread(() -> {
