@@ -8,7 +8,7 @@
 
 刚才的场景用代码可以写成：
 
-```java
+{%ace edit=true, lang='java'%}
 public class TestSignal {
   public static void main(String[] args) {
     Thread t1 = new Thread(() -> {
@@ -21,7 +21,7 @@ public class TestSignal {
     t2.start();
   }
 }
-```
+{%endace%}
 多运行几次可观察到，有时打印 1 2， 有时打印 2 1，顺序是不一定的。
 
 比如任务要求必须t2打印完毕2之后，再运行t1打印1，如何实现呢？
