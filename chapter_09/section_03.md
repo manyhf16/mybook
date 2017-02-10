@@ -8,7 +8,7 @@
 
 刚才的场景用代码可以写成：
 
-```
+```java
 public class TestSignal {
   public static void main(String[] args) {
     Thread t1 = new Thread(() -> {
@@ -35,7 +35,7 @@ public class TestSignal {
 
 ## 第一次改进
 
-```
+```java
 public class TestSignal {
   static Object mutex = new Object();
   public static void main(String[] args) {
@@ -68,7 +68,7 @@ public class TestSignal {
 
 需要加一个标记位来标记t1 是否需要wait()，前面已经分析过，如果t2已启动，这时的顺序已经达到了之前的要求，t1不需要wait()：
 
-```
+```java
 public class TestSignal {
   static Object mutex = new Object();
   static boolean t2Started = false; // t2 是否已启动
@@ -150,7 +150,7 @@ public class TestSignal {
 
 基于前面的分析，正确的“姿势”是在等待时用 while 进行判断，而不是if。if只能进行一次条件检查，只等待一次，而用while可以在条件不满足时重新让线程进入等待。
 
-```
+```java
 public class TestSignal {
   static Object mutex = new Object();
   static boolean t2Started = false;
