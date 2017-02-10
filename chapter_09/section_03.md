@@ -60,7 +60,7 @@ public class TestSignal {
 }
 ```
 
-这样，如果t1 先运行，运行到mutex时，就进入mutex等待； 接下来t2 运行，打印了2 以后，进入mutex唤醒了在mutex上等待了 t1 线程，t1 线程恢复运行，打印1。
+这样，如果t1 先运行，运行到mutex时，就进入mutex等待； 接下来t2 运行，打印了2 以后，进入mutex唤醒了在mutex上等待了 t1 线程，t1 线程恢复运行，打印1，这时顺序是正确的。
 
 但如果t2 先运行，打印了2 以后，进入mutex唤醒mutex上等待的线程，而这时mutex上根本没有等待的线程，所以接下来t1运行到mutex时，进入mutex等待，将来就没人来唤醒它了。
 
@@ -96,3 +96,5 @@ public class TestSignal {
   }
 }
 ```
+
+目前的代码还是有点问题：如果这时又加入其它线程的干扰，唤醒了
