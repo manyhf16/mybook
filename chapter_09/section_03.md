@@ -71,7 +71,7 @@ public class TestSignal {
 ```
 public class TestSignal {
   static Object mutex = new Object();
-  static boolean t2Started = false;
+  static boolean t2Started = false; // t2 是否已启动
   public static void main(String[] args) {
     Thread t1 = new Thread(() -> {      
       synchronized (mutex) {
