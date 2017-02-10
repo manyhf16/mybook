@@ -66,7 +66,7 @@ public class TestSignal {
 
 ## 第二次改进
 
-需要加一个标记位来标记t1 是否需要wait()，前面已经分析过，如果t2已启动，这时的顺序已经达到了之前的要求，t1不需要wait()，否则t1才需要wait()：
+需要加一个标记位来标记t1 是否需要wait()，前面已经分析过，如果t2已启动，这时的顺序已经达到了之前的要求，t1不需要wait()：
 
 ```
 public class TestSignal {
@@ -97,4 +97,103 @@ public class TestSignal {
 }
 ```
 
-目前的代码还是有点问题：如果这时又加入其它线程的干扰，唤醒了
+目前的代码还是有点问题：我们的代码没有考虑其它线程干扰的情况，如果现在又有一个t3 线程被启动，并且运行的顺序恰好是 t1, t3, t2：
+```
+public class TestSignal {
+  static Object mutex = new Object();
+  static boolean t2Started = false;
+
+  public static void main(String[] args) {
+    Thread t1 = new Thread(() -> {
+      synchronized (mutex) {
+        if (!t2Started) {
+          try {
+            mutex.wait();
+          } catch (Exception e) {
+          }
+        }
+      }
+      System.out.println(1);
+    });
+    Thread t2 = new Thread(() -> {      
+      System.out.println(2);
+      synchronized (mutex) {
+        t2Started = true;
+        mutex.notify();
+      }
+    });
+    Thread t3 = new Thread(() -> {      
+      synchronized (mutex) {
+        mutex.notify();
+      }
+    });
+    t1.start();
+    sleep(500);
+    t3.start();
+    sleep(500);
+    t2.start();
+    
+  }
+
+  private static void sleep(int millis) {
+    try {
+      Thread.sleep(millis);
+    } catch (Exception e1) {
+      e1.printStackTrace();
+    }
+  }
+}
+```
+其中的sleep()方法的加入是为了模拟刚才线程的以t1, t3, t2的顺序运行，这回t1先运行，进入了mutex等待，接下来t3 “不小心” 唤醒了mutex 上等待的t1, 这时候t2 还没来得及运行。
+
+## 第三次改进
+
+基于前面的分析，正确的“姿势”是在等待时用 while 进行判断，而不是if。if只能进行一次条件检查，只等待一次，而用while可以在条件不满足时重新让线程进入等待。
+
+```
+public class TestSignal {
+  static Object mutex = new Object();
+  static boolean t2Started = false;
+
+  public static void main(String[] args) {
+    Thread t1 = new Thread(() -> {
+      synchronized (mutex) {
+        while (!t2Started) {
+          try {
+            mutex.wait();
+          } catch (Exception e) {
+          }
+        }
+      }
+      System.out.println(1);
+    });
+    Thread t2 = new Thread(() -> {      
+      System.out.println(2);
+      synchronized (mutex) {
+        t2Started = true;
+        mutex.notify();
+      }
+    });
+    Thread t3 = new Thread(() -> {      
+      synchronized (mutex) {
+        mutex.notify();
+      }
+    });
+    t1.start();
+    sleep(500);
+    t3.start();
+    sleep(500);
+    t2.start();
+    
+  }
+
+  private static void sleep(int millis) {
+    try {
+      Thread.sleep(millis);
+    } catch (Exception e1) {
+      e1.printStackTrace();
+    }
+  }
+}
+```
+代码较之前，仅把if 改为了 while.
