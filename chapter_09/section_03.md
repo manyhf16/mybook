@@ -98,7 +98,7 @@ public class TestSignal {
 ```
 
 目前的代码还是有点问题：我们的代码没有考虑其它线程干扰的情况，如果现在又有一个t3 线程被启动，并且运行的顺序恰好是 t1, t3, t2：
-```
+```java
 public class TestSignal {
   static Object mutex = new Object();
   static boolean t2Started = false;
