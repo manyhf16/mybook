@@ -60,15 +60,15 @@ t2 - putstatic  将t2的结果-1写回count
   * 引用类型的对象如果是不可变的，线程安全（如String）
 
 ## 2. 问题的解决
-java中可以用` synchronized `关键字来保证多行代码的原子性，即受synchronized 保护的多行代码同一时刻只能被一个线程执行，其它线程只能排队等待。换句话说，synchronized 将并行操作变成了串行操作（也称为同步操作）。
-
-### 1) 语法
+java中可以用 `synchronized` 关键字来保证多行代码的原子性，它的语法为：
 ```java
 synchronized(obj) {
    // 多行要原子操作的代码
 }
 ```
-其中obj可以是任何对象，但要注意这个对象应该是能够为多个线程所共享和访问到的。
+其中obj 被称为临界资源`Critical Resource`，如果一个线程执行到synchronized(obj) 时，此线程会对 obj 对象上锁，将 synchronized 语句块内的代码保护起来；这时有其它线程执行到synchronized(obj) 时只能在锁外排队等待。
+
+即受synchronized 保护的多行代码同一时刻只能被一个线程执行，synchronized 将并行操作变成了串行操作（也称为同步操作）。
 
 例如，如果要让之前的例子成功运行，可以将代码修改为：
 ```java
