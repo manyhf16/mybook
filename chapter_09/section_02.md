@@ -4,7 +4,7 @@
 
 当多个线程同时执行同一段代码时，可能引起并发问题，例如：
 
-```
+```java
 public class TestConcurrent {
   public static int count = 0;
   public static void main(String[] args) throws InterruptedException {
@@ -63,7 +63,7 @@ t2 - putstatic  将t2的结果-1写回count
 java中可以用` synchronized `关键字来保证多行代码的原子性，即受synchronized 保护的多行代码同一时刻只能被一个线程执行，其它线程只能排队等待。换句话说，synchronized 将并行操作变成了串行操作（也称为同步操作）。
 
 ### 1) 语法
-```
+```java
 synchronized(obj) {
    // 多行要原子操作的代码
 }
@@ -71,7 +71,7 @@ synchronized(obj) {
 其中obj可以是任何对象，但要注意这个对象应该是能够为多个线程所共享和访问到的。
 
 例如，如果要让之前的例子成功运行，可以将代码修改为：
-```
+```java
 public class TestConcurrent {
   public static int count = 0;
   public static final Object mutex = new Object();
