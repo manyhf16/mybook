@@ -42,7 +42,7 @@ Java中将线程进行了抽象为`java.lang.Thread`类，而对线程中要运�
 ### 创建线程
 方法1：
 
-```
+```java
 Thread t = new Thread(new Runnable(){
    public void run() {
       // 要并行执行的代码
@@ -51,7 +51,7 @@ Thread t = new Thread(new Runnable(){
 ```
 方法2：因为Thread类自己也实现了Runnable接口，因此生成一个Thread的子类，重写run方法也是可以的：
 
-```
+```java
 Thread t = new Thread(){
    public void run() {
       // 要并行执行的代码
@@ -67,19 +67,19 @@ Thread t = new Thread(()-> { // 要并行执行的代码 });
 
 ### 启动线程
 一个线程对象被创建后，并没有立刻运行Runnable中的代码，需要执行线程对象的start()方法：
-```
+```java
 t.start();
 ```
 start() 方法的作用是让线程进入`就绪`状态，接下来才会被调度器交给CPU调度执行。
 
 ### 线程常用方法
 静态方法：
-```
+```java
 Thread.currentThread() // 获取当前线程
 Thread.sleep(long n)  // 让当前线程休眠n毫秒
 ```
 实例方法：
-```
+```java
 t.getName() // 获取线程名
 t.join() // 让当前线程等待t线程运行结束
 t.join(long n) // 让当前线程等待t线程运行结束，最多等待n毫秒
