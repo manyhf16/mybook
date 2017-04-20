@@ -5,7 +5,7 @@
 ## 1. 开发
 
 使用任意的文本编辑器编写HelloWorld.java 源文件
-```
+```java
 public class HelloWorld {
 
     public static void main(String[] args) {
