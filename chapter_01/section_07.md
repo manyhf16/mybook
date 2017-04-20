@@ -2,7 +2,7 @@
 
 ---
 
-## 提升规则
+## 1. 提升规则
 
 当执行数值相关的运算（包括赋值运算和方法调用）时，会发生类型提升问题。
 提升规则如下：
@@ -18,6 +18,8 @@
 byte  &lt;  short  &lt;  int &lt; long &lt; float &lt; double
 
 char &lt; int &lt; long &lt; float &lt; double
+
+## 2. 示例
 
 例1：
 
