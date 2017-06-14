@@ -8,7 +8,7 @@
 
 刚才的场景用代码可以写成：
 
-```
+```java
 public class TestSignal {
   public static void main(String[] args) {
     Thread t1 = new Thread(() -> {
@@ -37,7 +37,7 @@ public class TestSignal {
 
 ## 第一次改进
 
-```
+```java
 public class TestSignal {
   static Object mutex = new Object();
   public static void main(String[] args) {
@@ -70,7 +70,7 @@ public class TestSignal {
 
 需要加一个标记位来标记t1 是否需要wait\(\)，前面已经分析过，如果t2已启动，这时的顺序已经达到了之前的要求，t1不需要wait\(\)：
 
-```
+```java
 public class TestSignal {
   static Object mutex = new Object();
   static boolean t2Started = false; // t2 是否已启动
@@ -101,7 +101,7 @@ public class TestSignal {
 
 目前的代码还是有点问题：我们的代码没有考虑其它线程干扰的情况，如果现在又有一个t3 线程被启动，并且运行的顺序恰好是 t1, t3, t2：
 
-```
+```java
 public class TestSignal {
   static Object mutex = new Object();
   static boolean t2Started = false;
