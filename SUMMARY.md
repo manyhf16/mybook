@@ -9,7 +9,7 @@
   * [变量与数据类型](chapter_01/section_05.md)
   * [运算符](chapter_01/section_06.md)
     * [0601](chapter_01/section_06/0601.md)
-    * 0602
+    * [0602](chapter_01/section_06/0602.md)
     * 0603
     * 0604
     * 0605
