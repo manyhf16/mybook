@@ -154,7 +154,7 @@ public class TestSignal {
 
 基于前面的分析，正确的“姿势”是在等待时用 while 进行判断，而不是if。if只能进行一次条件检查，只等待一次，而用while可以在条件不满足时重新让线程进入等待。
 
-```
+```java
 public class TestSignal {
   static Object mutex = new Object();
   static boolean t2Started = false;
