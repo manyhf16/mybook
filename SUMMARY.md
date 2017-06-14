@@ -10,7 +10,7 @@
   * [运算符](chapter_01/section_06.md)
     * [0601](chapter_01/section_06/0601.md)
     * [0602](chapter_01/section_06/0602.md)
-    * 0603
+    * [0603](chapter_01/section_06/0603.md)
     * 0604
     * 0605
   * [类型提升](chapter_01/section_07.md)
