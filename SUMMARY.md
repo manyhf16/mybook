@@ -8,11 +8,11 @@
   * [字面量](chapter_01/section_04.md)
   * [变量与数据类型](chapter_01/section_05.md)
   * [运算符](chapter_01/section_06.md)
-    * [0601](chapter_01/section_06/0601.md)
-    * [0602](chapter_01/section_06/0602.md)
-    * [0603](chapter_01/section_06/0603.md)
-    * 0604
-    * 0605
+    * [算术运算](chapter_01/section_06/0601.md)
+    * [比较运算](chapter_01/section_06/0602.md)
+    * [逻辑运算](chapter_01/section_06/0603.md)
+    * [三元运算](chapter_01/section_06/0604.md)
+    * [运算符的优先级](chapter_01/section_06/0605.md)
   * [类型提升](chapter_01/section_07.md)
   * [类型转换](chapter_01/section_08.md)
   * [注释](chapter_01/section_09.md)
