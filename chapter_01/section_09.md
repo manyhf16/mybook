@@ -9,7 +9,7 @@
 ## 2. 单行注释
 例如：
 
-```
+```java
 // 这是单行注释1
 public class HelloWorld {
     // 这是单行注释2
@@ -22,7 +22,7 @@ public class HelloWorld {
 ```
 
 ## 3. 多行注释
-```
+```java
 /* 
  *  这是多行注释，第一行
  *  第二行
@@ -37,7 +37,7 @@ public class HelloWorld {
 ```
 
 ## 4. 文档注释
-```
+```java
 /** 
  *  这是文档注释，第一行
  *  第二行
